@@ -28,6 +28,7 @@ app.use(function (req, res) {
 });
 
 // localhost:3000 -> express API
-app.listen(5000, function () {
-  console.log("server started at port 5000");
+const port = process.env.PORT || 5000;
+app.listen(port, function () {
+  console.log(`server started at port ${port}`);
 });

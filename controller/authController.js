@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
-const secrets = require("../secrets");
+// const secrets = require("../secrets");
+const secrets = process.env || require("../secrets");
 const FooduserModel = require("../model/userModel");
 
 const mailSender = require("../utilities/mailSender");
@@ -195,11 +196,10 @@ async function otpController(req, res) {
         res.status(400).json({
           message: "Otp doesn't match",
         });
-      }
-      else{
+      } else {
         res.status(200).json({
-          message : "Otp Matches"
-        }) 
+          message: "Otp Matches",
+        });
       }
     }
   } catch (err) {

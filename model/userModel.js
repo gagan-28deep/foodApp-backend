@@ -3,9 +3,11 @@ const mongoose = require("mongoose");
 // Schema -> set of features and rules a certain entity should follow
 // Connect to my app -> mongoose
 
-let secret = require("../secrets");
+// let secret = require("../secrets");
+let DB_LINK = process.env.DB_LINK || require("../secrets").DB_LINK;
 mongoose
-  .connect(secret.DB_LINK)
+  // .connect(secret.DB_LINK)
+  .connect(DB_LINK)
   .then(function () {
     console.log("Connected");
   })
