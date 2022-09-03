@@ -21,6 +21,12 @@ app.use("/api/v1/plan", planRouter);
 // update user Profile
 // delete user profile
 
+// Static function/route
+
+app.use(function (req, res) {
+  res.send("<h1>Backend API</h1>");
+});
+
 // localhost:3000 -> express API
 app.listen(5000, function () {
   console.log("server started at port 5000");
